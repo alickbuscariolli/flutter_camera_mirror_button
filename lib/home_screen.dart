@@ -35,7 +35,14 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Center(
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Botão Flutter Dicas pressionado :D'),
+              ),
+            );
+          },
           child: Stack(
             children: [
               SizedBox(
