@@ -28,6 +28,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    const double buttonHeight = 80;
+    const double buttonWidth = 250;
+    const double borderRadius = 40;
+
     return Scaffold(
       body: Center(
         child: InkWell(
@@ -35,10 +39,10 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Stack(
             children: [
               SizedBox(
-                width: 250,
-                height: 80,
+                width: buttonWidth,
+                height: buttonHeight,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.circular(borderRadius),
                   child: CameraPreview(cameraCtrl),
                 ),
               ),
@@ -50,15 +54,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.4),
-                    borderRadius: BorderRadius.circular(50),
+                    borderRadius: BorderRadius.circular(borderRadius),
                   ),
-                  width: 250,
-                  height: 80,
+                  width: buttonWidth,
+                  height: buttonHeight,
                   child: Center(
                     child: Text(
                       'Flutter Dicas',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.8),
+                        color: Colors.white.withOpacity(0.6),
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
